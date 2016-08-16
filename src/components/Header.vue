@@ -1,11 +1,20 @@
 <template>
   <header>
-    <h1>Ganker's空间</h1>
+    <h1>{{ siteTitle }}</h1>
   </header>
 </template>
 
 <script>
-  export default { }
+import config from '../config'
+
+export default {
+  data: function () {
+    return {
+      siteTitle: config.siteTitle || 'Vue-blog'
+    }
+  }
+}
+
 </script>
 
 <style lang='scss'>
