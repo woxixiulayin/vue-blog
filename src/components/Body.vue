@@ -1,8 +1,13 @@
 <template>
-  <article class='main-body'>
-    <component :is="currentView"></component>
-  </article>
+  <div class='main-body'> 
+  <div class='content'>
+  <router-view
+    transition
+    transition-mode="out-in">
+  </router-view>
+  </div>
   <side></side>
+  </div>
 </template>
 
 <script type="text/javascript">
@@ -11,9 +16,6 @@ import post from './Post.vue'
 import side from './Aside.vue'
 
 export default {
-  data: {
-    currentView: postslist
-  },
   components: {
     postslist,
     post,
